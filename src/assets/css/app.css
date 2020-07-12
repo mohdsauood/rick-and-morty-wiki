@@ -1,0 +1,22 @@
+@import-normalize;
+@import 'home.css';
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.main-background {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../images/background.png');
+  background-size: cover;
+}
+
+.main-layer {
+  height: 100%;
+  width: 100%;
+}
+.darken {
+  background-color: rgba(0, 0, 0, 0.767);
+}
