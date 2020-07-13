@@ -9,7 +9,11 @@ export default function CharacterSelect({ state }) {
         ? item.name.match(regex).join('').toLowerCase()
         : item.name.toLowerCase();
       let keyName = key;
-      if (currentName.includes(keyName)) return item;
+      if (currentName.includes(keyName)) {
+        return item;
+      } else {
+        return null;
+      }
     });
 
     elements.push(
