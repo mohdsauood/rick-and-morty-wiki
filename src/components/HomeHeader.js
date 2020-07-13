@@ -7,7 +7,7 @@ export default function HomeHeader() {
         “this pickle doesn't care about your children. And I'm not gonna take
         their dreams. I'm gonna take their parents “ - <span>pickle rick</span>
       </p>
-      <div class="homeHeader-pickle">
+      <div className="homeHeader-pickle">
         <img
           src={require('../assets/images/picklerick.png')}
           alt="picklerick"

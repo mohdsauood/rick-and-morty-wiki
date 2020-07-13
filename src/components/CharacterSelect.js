@@ -1,15 +1,12 @@
 import React from 'react';
-
-export default function CharacterSelect() {
+import CharacterIcon from './CharacterIcon';
+export default function CharacterSelect({ state }) {
+  const elements = state.selectCharacterIcons.map((item) => {
+    return <CharacterIcon key={item.id} item={item} />;
+  });
   return (
     <div className="characterSelect">
-      <div className="characterIcons"></div>
-      <div className="characterIcons"></div>
-      <div className="characterIcons"></div>
-      <div className="characterIcons"></div>
-      <div className="characterIcons"></div>
-      <div className="characterIcons"></div>
-      <div className="characterIcons"></div>
+      {elements}
       <div className="characterIcons lastIcon">
         <p>multiverse</p>
         <svg
