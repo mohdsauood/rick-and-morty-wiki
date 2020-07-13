@@ -1,9 +1,24 @@
-.pageTitle h2 {
-  text-transform: uppercase;
-  font-size: 5.2em;
+.characterSelect {
+  border: 2px solid black;
+  position: absolute;
+  width: 90vw;
+  height: 20vh;
+  bottom: 10vh;
+  margin: 0 4vw;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.characterIcons {
+  border: 1px solid white;
+}
+.lastIcon {
+  display: flex;
+  justify-content: center;
+}
+.lastIcon p {
+  align-self: center;
+  font-size: 1.9em;
   color: white;
-  text-align: center;
-  padding-top: 3vh;
   text-shadow: rgb(0, 0, 0) 2px 0px 0px, rgb(0, 0, 0) 1.75517px 0.958851px 0px,
     rgb(0, 0, 0) 1.0806px 1.68294px 0px, rgb(0, 0, 0) 0.141474px 1.99499px 0px,
     rgb(0, 0, 0) -0.832294px 1.81859px 0px,
@@ -16,33 +31,8 @@
     rgb(0, 0, 0) 1.92034px -0.558831px 0px;
 }
 
-.homeHeader {
-  margin-top: 7vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.homeHeader p {
+.lastIcon svg {
+  height: 1.1em;
+  align-self: center;
   color: white;
-  padding: 0 5vw;
-  font-size: 2.5em;
-  line-height: 1.2em;
-  font-style: italic;
-  text-shadow: 2px 2px 4px #000000;
-}
-.homeHeader p span {
-  color: var(--blue);
-  font-weight: 600;
-  font-style: normal;
-}
-
-.homeHeader-pickle {
-  margin-top: 3vh;
-  display: flex;
-  justify-content: flex-end;
-  padding-right: 10vw;
-}
-
-.homeHeader-pickle img {
-  width: 48%;
 }

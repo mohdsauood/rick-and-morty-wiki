@@ -1,10 +1,16 @@
 @import-normalize;
 @import 'home.css';
+@import 'characterSelect.css';
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Kanit', sans-serif;
+  --blue: #02c1d8;
+  --yellow: #fcfa77;
+  --orange: #e35d21;
 }
 .main-background {
   width: 100vw;
