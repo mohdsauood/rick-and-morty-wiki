@@ -15,7 +15,7 @@
 .main-background {
   width: 100vw;
   height: 100vh;
-  background-image: url('../images/p1background.jpg');
+  background-image: url('../images/mobilebackground.png');
   background-size: cover;
 }
 
