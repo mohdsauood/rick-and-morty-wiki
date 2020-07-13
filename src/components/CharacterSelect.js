@@ -1,9 +1,27 @@
 import React from 'react';
 import CharacterIcon from './CharacterIcon';
 export default function CharacterSelect({ state }) {
-  const elements = state.selectCharacterIcons.map((item) => {
-    return <CharacterIcon key={item.id} item={item} />;
-  });
+  let elements = [];
+  for (let [key, value] of Object.entries(state.myData)) {
+    let apiDataValue = state.apiData.filter((item) => {
+      const regex = /\w/g;
+      let currentName = item.name.includes('.')
+        ? item.name.match(regex).join('').toLowerCase()
+        : item.name.toLowerCase();
+      let keyName = key;
+      if (currentName.includes(keyName)) return item;
+    });
+
+    elements.push(
+      <CharacterIcon
+        key={apiDataValue.id}
+        myData={value}
+        characterName={key}
+        apiDataValue={apiDataValue}
+      />
+    );
+  }
+
   return (
     <div className="characterSelect">
       {elements}

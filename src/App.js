@@ -2,26 +2,27 @@ import React, { useReducer, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Home from './components/Home';
 import './assets/css/app.css';
-import { SET_SELECT_ICONS } from './types.js';
-
-function mainReducer(state, action) {
-  switch (action.type) {
-    case SET_SELECT_ICONS:
-      return { ...state, selectCharacterIcons: action.payload };
-    default:
-      return state;
-  }
-}
+import { SET_SELECT_ICONS, SET_API_DEFAULTDATA } from './types.js';
+import {
+  rick,
+  morty,
+  beth,
+  jerry,
+  summer,
+  mrmeeseeks,
+  mrpoopy,
+} from './Mydata';
+import mainReducer from './components/mainReducer';
 
 const initialState = {
-  selectCharacterIcons: [],
+  myData: { rick, morty, beth, jerry, summer, mrmeeseeks, mrpoopy },
+  apiData: [],
 };
 
 export const mainContext = React.createContext('');
 
 function App() {
   const [state, dispatch] = useReducer(mainReducer, initialState);
-
   useEffect(() => {
     async function getData() {
       try {
@@ -29,8 +30,7 @@ function App() {
           'https://rickandmortyapi.com/api/character/[1,2,3,4,5,244,242]'
         );
         let res = await data.json();
-        console.log(res);
-        dispatch({ type: SET_SELECT_ICONS, payload: res });
+        dispatch({ type: SET_API_DEFAULTDATA, payload: res });
       } catch (e) {
         console.log(e);
       }

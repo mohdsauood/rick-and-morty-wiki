@@ -1,1 +1,3 @@
 export const SET_SELECT_ICONS = 'set_select_icons';
+
+export const SET_API_DEFAULTDATA = 'set_api_defaultdata';

@@ -45,4 +45,15 @@
 
 .homeHeader-pickle img {
   width: 48%;
+  animation: wheel-one 20s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes wheel-one {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
 }

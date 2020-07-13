@@ -12,6 +12,9 @@
   border: 4px solid white;
   background-size: cover;
 }
+.characterSelect :nth-child(2) {
+  background-image: url('../images/icons/bethIcon.png');
+}
 .lastIcon {
   display: flex;
   justify-content: center;
