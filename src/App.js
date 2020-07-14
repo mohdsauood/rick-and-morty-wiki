@@ -1,8 +1,8 @@
 import React, { useReducer, useEffect } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './components/Home';
 import './assets/css/app.css';
-import { SET_SELECT_ICONS, SET_API_DEFAULTDATA } from './types.js';
+import { SET_API_DEFAULTDATA } from './types.js';
 import {
   rick,
   morty,
@@ -13,10 +13,11 @@ import {
   mrpoopy,
 } from './Mydata';
 import mainReducer from './components/mainReducer';
-
+import CharacterPage from './components/CharacterPage';
 const initialState = {
   myData: { rick, morty, beth, jerry, summer, mrmeeseeks, mrpoopy },
   apiData: [],
+  currentCharacter: false,
 };
 
 export const mainContext = React.createContext('');
@@ -40,6 +41,7 @@ function App() {
 
   const mainContextValue = {
     state,
+    dispatch,
   };
   return (
     <Router>
@@ -47,8 +49,11 @@ function App() {
         <div className="main-background">
           <div className="main-layer">
             <Switch>
-              <Route path={`/`}>
+              <Route exact path={`/`}>
                 <Home />
+              </Route>
+              <Route path={`/character/:name`}>
+                <CharacterPage />
               </Route>
             </Switch>
           </div>

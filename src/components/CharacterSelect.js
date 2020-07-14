@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import CharacterIcon from './CharacterIcon';
+import { mainContext } from '../App';
+import { SET_CURRENT_CHARACTER } from '../types';
+import { useHistory } from 'react-router-dom';
+
 export default function CharacterSelect({ state }) {
+  const { dispatch } = useContext(mainContext);
+  const history = useHistory();
   let elements = [];
   for (let [key, value] of Object.entries(state.myData)) {
     let apiDataValue = state.apiData.filter((item) => {
@@ -29,7 +35,12 @@ export default function CharacterSelect({ state }) {
   return (
     <div className="characterSelect">
       {elements}
-      <div className="characterIcons lastIcon">
+      <div
+        onClick={() => {
+          dispatch({ type: SET_CURRENT_CHARACTER, payload: false });
+          history.push(`/multiverse`);
+        }}
+        className="characterIcons lastIcon">
         <p>multiverse</p>
         <svg
           xmlns="http://www.w3.org/2000/svg"
