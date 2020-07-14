@@ -2,6 +2,7 @@
 @import 'home.css';
 @import 'characterSelect.css';
 @import 'homeNav.css';
+@import 'characterPage.css';
 @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
 
 * {

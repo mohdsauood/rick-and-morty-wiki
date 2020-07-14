@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { mainContext } from '../App';
 import { SET_CURRENT_CHARACTER } from '../types';
 import { useHistory } from 'react-router-dom';
-export default function CharacterIcon({ apiDataValue, myData, characterName }) {
+export default function CharacterIcon({ myData, characterName }) {
   const history = useHistory();
   const { dispatch } = useContext(mainContext);
   const icon = require(`../assets/images/icons/${characterName}Icon.png`);

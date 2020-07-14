@@ -1,0 +1,41 @@
+.characterInfo {
+  margin: 0 10vw;
+  margin-top: 6vh;
+  color: white;
+  font-size: 2em;
+  border: 2px solid lightgreen;
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+  grid-auto-rows: auto;
+}
+
+.characterInfo-img {
+  width: 28vw;
+  height: 30vh;
+  background-image: url('../images/morty.png');
+  background-size: cover;
+}
+.characterInfo-img {
+  grid-column: 1/4;
+  grid-row: 1/8;
+}
+
+.characterInfo-name,
+.characterInfo-name-data,
+.characterInfo-species,
+.characterInfo-species-data,
+.characterInfo-wordings,
+.characterInfo-wordings-data {
+  grid-column: 4/7;
+  justify-self: center;
+}
+.characterInfo-about {
+  justify-self: center;
+  grid-column: 4/7;
+  grid-row: 7/8;
+}
+.characterInfo-name,
+.characterInfo-species,
+.characterInfo-wordings {
+  align-self: end;
+}

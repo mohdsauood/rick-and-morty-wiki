@@ -8,27 +8,10 @@ export default function CharacterSelect({ state }) {
   const { dispatch } = useContext(mainContext);
   const history = useHistory();
   let elements = [];
+  let counter = 0;
   for (let [key, value] of Object.entries(state.myData)) {
-    let apiDataValue = state.apiData.filter((item) => {
-      const regex = /\w/g;
-      let currentName = item.name.includes('.')
-        ? item.name.match(regex).join('').toLowerCase()
-        : item.name.toLowerCase();
-      let keyName = key;
-      if (currentName.includes(keyName)) {
-        return item;
-      } else {
-        return null;
-      }
-    });
-
     elements.push(
-      <CharacterIcon
-        key={apiDataValue.id}
-        myData={value}
-        characterName={key}
-        apiDataValue={apiDataValue}
-      />
+      <CharacterIcon key={counter++} myData={value} characterName={key} />
     );
   }
 
