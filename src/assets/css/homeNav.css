@@ -1,0 +1,12 @@
+.homeNav {
+  margin-top: 4vh;
+  text-align: left;
+  padding-left: 2em;
+}
+
+.homeNav a {
+  text-decoration: none;
+  font-size: 3em;
+  font-weight: semibold;
+  color: var(--yellow);
+}

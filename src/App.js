@@ -18,6 +18,7 @@ const initialState = {
   myData: { rick, morty, beth, jerry, summer, mrmeeseeks, mrpoopy },
   apiData: [],
   currentCharacter: false,
+  darken: false,
 };
 
 export const mainContext = React.createContext('');
@@ -47,7 +48,7 @@ function App() {
     <Router>
       <mainContext.Provider value={mainContextValue}>
         <div className="main-background">
-          <div className="main-layer">
+          <div className={state.darken ? 'main-layer darken' : 'main-layer'}>
             <Switch>
               <Route exact path={`/`}>
                 <Home />

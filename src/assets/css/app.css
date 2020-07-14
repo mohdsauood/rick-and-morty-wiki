@@ -1,6 +1,7 @@
 @import-normalize;
 @import 'home.css';
 @import 'characterSelect.css';
+@import 'homeNav.css';
 @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
 
 * {
@@ -18,7 +19,9 @@
   background-image: url('../images/mobilebackground.png');
   background-size: cover;
 }
-
+.orange {
+  color: var(--orange) !important;
+}
 .main-layer {
   height: 100%;
   width: 100%;
