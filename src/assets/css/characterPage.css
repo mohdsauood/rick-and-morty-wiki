@@ -1,23 +1,22 @@
 .characterInfo {
   margin: 0 10vw;
   margin-top: 6vh;
-  color: white;
+  color: var(--white);
   font-size: 2em;
-  border: 2px solid lightgreen;
   display: grid;
   grid-template-columns: repeat(6, auto);
   grid-auto-rows: auto;
+  min-height: 40vh;
+  max-height: auto;
 }
 
 .characterInfo-img {
   width: 28vw;
-  height: 30vh;
-  background-image: url('../images/morty.png');
-  background-size: cover;
+  height: 100%;
 }
 .characterInfo-img {
   grid-column: 1/4;
-  grid-row: 1/8;
+  grid-row: 1/12;
 }
 
 .characterInfo-name,
@@ -32,10 +31,39 @@
 .characterInfo-about {
   justify-self: center;
   grid-column: 4/7;
-  grid-row: 7/8;
+  grid-row: 8/12;
+  padding: 2em;
+  line-height: 1.5em;
+  font-weight: 500;
 }
 .characterInfo-name,
 .characterInfo-species,
 .characterInfo-wordings {
   align-self: end;
+  font-weight: lighter;
+  color: var(--white);
+  margin-bottom: 0.2vh;
+}
+
+.characterInfo-name-data,
+.characterInfo-species-data,
+.characterInfo-wordings-data {
+  color: var(--lightblue);
+  font-weight: bold;
+}
+.characterInfo-species,
+.characterInfo-wordings {
+  margin-top: 1vh;
+}
+
+.characterInfo-wordings-data {
+  font-style: italic;
+  padding: 0 1em;
+  line-height: 1.2em;
+}
+
+.characterInfo-img img {
+  height: 40vh;
+  /* height: 100%; */
+  max-width: 100%;
 }

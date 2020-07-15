@@ -14,7 +14,7 @@ export default function CharacterPage() {
   useEffect(() => {
     dispatch({ type: SET_DARKEN, payload: true });
     async function getData() {
-      if (!state.apiData.name) {
+      if (!state.apiData[name]) {
         try {
           let data = await fetch(
             `https://rickandmortyapi.com/api/character/${id}`
@@ -27,16 +27,19 @@ export default function CharacterPage() {
         } catch (e) {
           console.log(e);
         }
-      } else {
-        getData();
       }
     }
+    getData();
   }, [dispatch, id, name]);
   return (
     <>
       <PageTitle title="Main Characters" color="orange" />
       <HomeNav />
-      <CharacterInfo />
+      <CharacterInfo
+        characterName={name}
+        character={state.apiData[name]}
+        myCharacter={state.myData[name]}
+      />
       <CharacterSelect state={state} />
     </>
   );
@@ -49,15 +52,15 @@ function getId(name) {
     case 'morty':
       return 2;
     case 'beth':
-      return 3;
-    case 'jerry':
       return 4;
-    case 'summer':
+    case 'jerry':
       return 5;
+    case 'summer':
+      return 3;
     case 'mrmeeseeks':
-      return 244;
-    case 'mrpoopy':
       return 242;
+    case 'mrpoopy':
+      return 244;
     default:
       return null;
   }

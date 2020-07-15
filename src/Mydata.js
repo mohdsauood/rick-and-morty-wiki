@@ -12,14 +12,14 @@ export const morty = {
 export const beth = {
   quote: `"let's save the measuring for when our d*cks are out , its time to save a life"`,
   about:
-    ' A dedicated veterinary horse surgeon and a mother of two. Characterized by a superiority complex and abandonment issues, Beth gradually came to struggle with her husband over his contributions to their marriage',
+    ' A dedicated veterinary horse surgeon with superiority complex and struggles with her husband over his contributions to their marriage',
   icon: `url('./images/icons/bethIcon.png')`,
   largeImg: `url('./images/beth.png')`,
 };
 export const jerry = {
   quote: `"life is effort and i'll stop when i die"`,
   about:
-    'the father of Summer Smith and Morty Smith ,jerry has a habit of quitting when things get too difficult. Despite being generally passive and weak most of the time, Jerry has the ability to channel the inner-strength to face his fears',
+    'He has a habit of quitting when things get too difficult. Despite being generally passive and weak most of the time, Jerry has the ability to channel the inner-strength to face his fears',
   icon: `url('./images/icons/jerryIcon.png')`,
   largeImg: `url('./images/jerry.png')`,
 };

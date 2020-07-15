@@ -1,11 +1,11 @@
 .homeNav {
   text-align: left;
-  margin: 1vh 4vw;
+  margin: 2vh 4vw;
 }
 
 .homeNav a {
   text-decoration: none;
   font-size: 2.6em;
   font-weight: semibold;
-  color: var(--yellow);
+  color: var(--white);
 }
