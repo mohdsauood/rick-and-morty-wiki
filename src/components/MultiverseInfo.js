@@ -24,10 +24,9 @@ export default function MultiverseInfo({ item, name }) {
       );
     }
   }
-  console.log(item);
   let elements = [];
   if (typeof item != 'undefined') {
-    elements = item.results.map((item) => {
+    elements = item.results.map((item, index) => {
       return <MultiverseCharacter item={item} />;
     });
   }

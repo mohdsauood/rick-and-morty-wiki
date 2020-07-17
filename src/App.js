@@ -56,3 +56,14 @@ function App() {
 }
 
 export default App;
+
+//add pagination for reducing load on the page
+// only load when scrolled
+// implement that
+// watch pagination and infinite scroll react
+// then fix mobile responsives by using netlify
+// fix errors deploy
+// see how it looks in mobile
+// style for desktop and other screens
+// add hover effects and loading animation
+//
