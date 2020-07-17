@@ -4,14 +4,19 @@ import { mainContext } from '../App';
 import { SET_CURRENT_CHARACTER } from '../types';
 import { useHistory } from 'react-router-dom';
 
-export default function CharacterSelect({ state }) {
+export default function CharacterSelect({ state, param }) {
   const { dispatch } = useContext(mainContext);
   const history = useHistory();
   let elements = [];
   let counter = 0;
   for (let [key, value] of Object.entries(state.myData)) {
     elements.push(
-      <CharacterIcon key={counter++} myData={value} characterName={key} />
+      <CharacterIcon
+        key={counter++}
+        myData={value}
+        characterName={key}
+        param={param}
+      />
     );
   }
 
@@ -21,7 +26,7 @@ export default function CharacterSelect({ state }) {
       <div
         onClick={() => {
           dispatch({ type: SET_CURRENT_CHARACTER, payload: false });
-          history.push(`/multiverse`);
+          history.push(`/multiverse/rick`);
         }}
         className="characterIcons lastIcon">
         <p>multiverse</p>

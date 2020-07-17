@@ -13,11 +13,13 @@ import {
 } from './Mydata';
 import mainReducer from './components/mainReducer';
 import CharacterPage from './components/CharacterPage';
+import MultiversePage from './components/MultiversePage';
 const initialState = {
   myData: { rick, morty, beth, jerry, summer, mrmeeseeks, mrpoopy },
   apiData: {},
   currentCharacter: false,
   darken: false,
+  mcData: {},
 };
 
 export const mainContext = React.createContext('');
@@ -40,6 +42,9 @@ function App() {
               </Route>
               <Route path={`/character/:name`}>
                 <CharacterPage />
+              </Route>
+              <Route path={`/multiverse/:name`}>
+                <MultiversePage />
               </Route>
             </Switch>
           </div>

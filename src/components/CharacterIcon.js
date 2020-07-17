@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { mainContext } from '../App';
 import { SET_CURRENT_CHARACTER } from '../types';
 import { useHistory } from 'react-router-dom';
-export default function CharacterIcon({ myData, characterName }) {
+export default function CharacterIcon({ myData, characterName, param }) {
   const history = useHistory();
   const { dispatch } = useContext(mainContext);
 
@@ -16,7 +16,9 @@ export default function CharacterIcon({ myData, characterName }) {
         dispatch({ type: SET_CURRENT_CHARACTER, payload: characterName });
         history.push(`/character/${characterName}`);
       }}
-      className="characterIcons"
+      className={
+        characterName == param ? 'characterIcons selected' : 'characterIcons'
+      }
       style={divStyle}></div>
   );
 }

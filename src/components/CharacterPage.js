@@ -40,7 +40,7 @@ export default function CharacterPage() {
         character={state.apiData[name]}
         myCharacter={state.myData[name]}
       />
-      <CharacterSelect state={state} />
+      <CharacterSelect state={state} param={name} />
     </>
   );
 }

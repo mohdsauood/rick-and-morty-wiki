@@ -3,6 +3,7 @@ import {
   SET_CURRENT_CHARACTER,
   SET_CHARACTER_API_DATA,
   SET_DARKEN,
+  SET_MC_DATA,
 } from '../types.js';
 export default function mainReducer(state, action) {
   switch (action.type) {
@@ -18,6 +19,12 @@ export default function mainReducer(state, action) {
       return { ...state, currentCharacter: action.payload };
     case SET_DARKEN:
       return { ...state, darken: action.payload };
+    case SET_MC_DATA:
+      let namee = action.payload.name;
+      return {
+        ...state,
+        mcData: { ...state.mcData, [namee]: action.payload.data },
+      };
     default:
       return state;
   }

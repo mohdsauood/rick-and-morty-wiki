@@ -3,6 +3,7 @@
 @import 'characterSelect.css';
 @import 'homeNav.css';
 @import 'characterPage.css';
+@import 'multiversePage.css';
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;700&display=swap');
 
 * {
