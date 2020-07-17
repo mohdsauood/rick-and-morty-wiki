@@ -1,13 +1,30 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import MultiverseCharacter from './MultiverseCharacter';
-const rick = require(`../assets/images/icons/rickIcon.png`);
-const morty = require(`../assets/images/icons/mortyIcon.png`);
-const jerry = require(`../assets/images/icons/jerryIcon.png`);
+import { mainContext } from '../App';
 
 export default function MultiverseInfo({ item, name }) {
+  let { state, dispatch } = useContext(mainContext);
+  let mcNav = [];
+  let counter = 10;
   console.log('name is ' + name);
   let history = useHistory();
+  for (let [key, value] of Object.entries(state.myData)) {
+    let imgSrc = require(`../assets/images/icons/${key}Icon.png`);
+    if (key != 'mrpoopy' && key != 'mrmeeseeks') {
+      mcNav.push(
+        <div
+          key={counter++}
+          onClick={() => {
+            history.push(`/multiverse/${key}`);
+          }}
+          className="multiverseNavIcon ">
+          <img className={name == key && 'selected'} src={imgSrc} alt="key" />
+        </div>
+      );
+    }
+  }
+  console.log(item);
   let elements = [];
   if (typeof item != 'undefined') {
     elements = item.results.map((item) => {
@@ -17,29 +34,7 @@ export default function MultiverseInfo({ item, name }) {
 
   return (
     <div className="multiverseInfo">
-      <div className="multiverseNav">
-        <div
-          onClick={() => {
-            history.push(`/multiverse/rick`);
-          }}
-          className="multiverseNavIcon mnIcon1">
-          <img className={name == 'rick' && 'selected'} src={rick} alt="" />
-        </div>
-        <div
-          onClick={() => {
-            history.push(`/multiverse/morty`);
-          }}
-          className="multiverseNavIcon mnIcon2">
-          <img className={name == 'morty' && 'selected'} src={morty} alt="" />
-        </div>
-        <div
-          onClick={() => {
-            history.push(`/multiverse/jerry`);
-          }}
-          className="multiverseNavIcon mnIcon3">
-          <img className={name == 'jerry' && 'selected'} src={jerry} alt="" />
-        </div>
-      </div>
+      <div className="multiverseNav">{mcNav}</div>
       <div className="multiverseCharacters">{elements}</div>
     </div>
   );

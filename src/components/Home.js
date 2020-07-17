@@ -12,7 +12,7 @@ export default function Home() {
   }, [dispatch]);
   return (
     <>
-      <PageTitle title="Character Info" />
+      <PageTitle title="Character Wiki" />
       <HomeHeader />
       <CharacterSelect state={state} />
     </>

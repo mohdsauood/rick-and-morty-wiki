@@ -9,6 +9,7 @@
 .multiverseNav {
   height: 100%;
   width: 35%;
+  overflow-y: scroll;
 }
 
 .multiverseNavIcon {
@@ -29,6 +30,7 @@
   height: 100%;
   margin: 0 5%;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 .multiverseCharacter {
   color: white;
@@ -79,4 +81,36 @@
 
 .selected {
   background-color: var(--lightblue);
+}
+
+/*
+ *  scroll bar
+ */
+
+.multiverseNav::-webkit-scrollbar-track {
+  border: 1px solid var(--orange);
+  background-color: #f5f5f5;
+}
+
+.multiverseNav::-webkit-scrollbar {
+  width: 10px;
+  background-color: #f5f5f5;
+}
+
+.multiverseNav::-webkit-scrollbar-thumb {
+  background-color: var(--orange);
+}
+
+.multiversCharactersv::-webkit-scrollbar-track {
+  border: 1px solid var(--blue);
+  background-color: #f5f5f5;
+}
+
+.multiverseCharacters::-webkit-scrollbar {
+  width: 5px;
+  background-color: #f5f5f5;
+}
+
+.multiverseCharacters::-webkit-scrollbar-thumb {
+  background-color: var(--blue);
 }
