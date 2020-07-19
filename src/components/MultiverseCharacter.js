@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function MultiverseCharacter({ item }) {
+export default function MultiverseCharacter({ item, ref1 = {} }) {
   console.log(item);
   return (
-    <div className="multiverseCharacter">
+    <div ref={ref1} className="multiverseCharacter">
       <img src={item.image} alt="" />
       <div className="mc-name">name</div>
       <div className="mc-name-data">{item.name}</div>

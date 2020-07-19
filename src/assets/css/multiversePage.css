@@ -2,6 +2,7 @@
   margin: 0 4vw;
   margin-top: 10vh;
   height: 60vh;
+  /* height: auto; */
   display: flex;
   flex-direction: row;
 }

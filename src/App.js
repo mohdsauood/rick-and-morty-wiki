@@ -57,6 +57,9 @@ function App() {
 
 export default App;
 
+// i need to learn destructuring and update the info value of the bottom most found rick
+// so practise destructuring and then do that first
+
 //add pagination for reducing load on the page
 // only load when scrolled
 // implement that
@@ -66,4 +69,3 @@ export default App;
 // see how it looks in mobile
 // style for desktop and other screens
 // add hover effects and loading animation
-//

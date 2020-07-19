@@ -9,7 +9,6 @@ import { useParams } from 'react-router-dom';
 export default function MultiversePage() {
   let { state, dispatch } = useContext(mainContext);
   let { name } = useParams();
-  //   name = getName(name);
   useEffect(() => {
     console.log(name);
     dispatch({ type: SET_DARKEN, payload: true });
@@ -24,6 +23,7 @@ export default function MultiversePage() {
             type: SET_MC_DATA,
             payload: { data: res, name: name },
           });
+          console.log('im result below');
           console.log(res);
         } catch (e) {
           console.log(e);
@@ -39,17 +39,4 @@ export default function MultiversePage() {
       <MultiverseInfo item={state.mcData[name]} name={name} />
     </>
   );
-}
-
-function getName(name) {
-  switch (name) {
-    case 'rick':
-      return 'Rick Sanchez';
-    case 'morty':
-      return 'Morty Smith';
-    case 'jerry':
-      return 'Jerry Smith';
-    default:
-      return null;
-  }
 }
