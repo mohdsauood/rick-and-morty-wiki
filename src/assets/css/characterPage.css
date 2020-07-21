@@ -70,3 +70,7 @@
   /* height: 100%; */
   max-width: 100%;
 }
+
+.smallLoading {
+  font-size: 1em !important;
+}

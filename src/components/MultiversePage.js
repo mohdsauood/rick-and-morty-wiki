@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import { SET_DARKEN, SET_MC_DATA } from '../types';
+import { SET_DARKEN, SET_MC_DATA, UPDATE_MC_LOADING } from '../types';
 import HomeNav from './HomeNav';
 import { mainContext } from '../App';
 import PageTitle from './PageTitle';
@@ -9,8 +9,15 @@ import { useParams } from 'react-router-dom';
 export default function MultiversePage() {
   let { state, dispatch } = useContext(mainContext);
   let { name } = useParams();
+  if (state.mcData[name]) {
+    if (!state.mcData[name].info.next && state.mcLoading) {
+      dispatch({
+        type: UPDATE_MC_LOADING,
+        payload: false,
+      });
+    }
+  }
   useEffect(() => {
-    console.log(name);
     dispatch({ type: SET_DARKEN, payload: true });
     async function getData() {
       if (!state.mcData[name]) {
@@ -19,11 +26,15 @@ export default function MultiversePage() {
             `https://rickandmortyapi.com/api/character/?name=${name}`
           );
           let res = await data.json();
-          dispatch({
-            type: SET_MC_DATA,
-            payload: { data: res, name: name },
+          let promise1 = new Promise((resolve, reject) => {
+            resolve();
           });
-          console.log('im result below');
+          promise1.then(() => {
+            dispatch({
+              type: SET_MC_DATA,
+              payload: { data: res, name: name },
+            });
+          });
           console.log(res);
         } catch (e) {
           console.log(e);
@@ -32,6 +43,7 @@ export default function MultiversePage() {
     }
     getData();
   }, [dispatch, name, state.mcData]);
+
   return (
     <>
       <PageTitle title="Multi-Verse" color="orange" />

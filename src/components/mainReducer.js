@@ -5,6 +5,8 @@ import {
   SET_DARKEN,
   SET_MC_DATA,
   UPDATE_MC_DATA,
+  UPDATE_MC_LOADING,
+  UPDATE_API_DATA_LOADING,
 } from '../types.js';
 export default function mainReducer(state, action) {
   switch (action.type) {
@@ -42,6 +44,10 @@ export default function mainReducer(state, action) {
           },
         },
       };
+    case UPDATE_MC_LOADING:
+      return { ...state, mcLoading: action.payload };
+    case UPDATE_API_DATA_LOADING:
+      return { ...state, apiDataLoading: action.payload };
     default:
       return state;
   }

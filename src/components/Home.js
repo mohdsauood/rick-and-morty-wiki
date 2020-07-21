@@ -9,7 +9,6 @@ export default function Home() {
   useEffect(() => {
     dispatch({ type: SET_DARKEN, payload: false });
   }, [dispatch]);
-
   return (
     <>
       <PageTitle title="Character Wiki" />

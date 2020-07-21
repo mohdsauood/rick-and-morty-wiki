@@ -1,6 +1,6 @@
 export const rick = {
   quote: '"nothing you do matters ! your existence is a lie "',
-  about: `He is a genius scientist whose alcoholism and reckless, nihilistic behavior are a source of concern for his daughter's family, as well as the safety of their son, Mort`,
+  about: `He is a genius scientist whose alcoholism and reckless, nihilistic behavior are a source of concern for his daughter's family, as well as the safety of their son, Morty`,
 };
 export const morty = {
   quote: 'You son of a b*tch ! im in',

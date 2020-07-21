@@ -19,7 +19,6 @@ export default function CharacterSelect({ state, param }) {
       />
     );
   }
-
   return (
     <div className="characterSelect">
       {elements}

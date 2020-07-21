@@ -1,16 +1,15 @@
-import React, { useContext, useRef, useCallback, useEffect } from 'react';
+import React, { useContext, useRef, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 import MultiverseCharacter from './MultiverseCharacter';
 import { mainContext } from '../App';
-import { UPDATE_MC_DATA } from '../types';
+import { UPDATE_MC_DATA, UPDATE_MC_LOADING } from '../types';
 export default function MultiverseInfo({ item, name }) {
   let { state, dispatch } = useContext(mainContext);
   let mcNav = [];
-  console.log('name is ' + name);
   let history = useHistory();
-  for (let [key, value] of Object.entries(state.myData)) {
+  for (let [key] of Object.entries(state.myData)) {
     let imgSrc = require(`../assets/images/icons/${key}Icon.png`);
-    if (key != 'mrpoopy' && key != 'mrmeeseeks') {
+    if (key !== 'mrpoopy' && key !== 'mrmeeseeks') {
       mcNav.push(
         <div
           key={key}
@@ -18,7 +17,7 @@ export default function MultiverseInfo({ item, name }) {
             history.push(`/multiverse/${key}`);
           }}
           className="multiverseNavIcon ">
-          <img className={name == key && 'selected'} src={imgSrc} alt="key" />
+          <img className={name === key && 'selected'} src={imgSrc} alt="key" />
         </div>
       );
     }
@@ -32,13 +31,22 @@ export default function MultiverseInfo({ item, name }) {
         if (url) {
           async function getData() {
             try {
+              dispatch({
+                type: UPDATE_MC_LOADING,
+                payload: true,
+              });
               let data = await fetch(`${url}`);
               let res = await data.json();
               dispatch({
                 type: UPDATE_MC_DATA,
                 payload: { data: res, name: name },
               });
-              console.log(res);
+              if (!data.res.info.next) {
+                dispatch({
+                  type: UPDATE_MC_LOADING,
+                  payload: false,
+                });
+              }
             } catch (e) {
               console.log(e);
             }
@@ -49,24 +57,23 @@ export default function MultiverseInfo({ item, name }) {
     });
     if (node) observer.current.observe(node);
   });
-
   let elements = [];
-
   if (typeof item != 'undefined') {
     elements = item.results.map((element, index) => {
-      if (item.results.length == index + 1) {
-        console.log('yes im last element');
-        return <MultiverseCharacter ref1={lastCharacterRef} item={element} />;
+      if (item.results.length === index + 1) {
+        return (
+          <MultiverseCharacter
+            ref1={lastCharacterRef}
+            loading={state.mcLoading}
+            item={element}
+          />
+        );
       } else {
         return <MultiverseCharacter item={element} />;
       }
     });
   }
-  useEffect(() => {
-    return () => {
-      console.log('im running when swapped bw ppl');
-    };
-  });
+
   return (
     <div className="multiverseInfo">
       <div className="multiverseNav">{mcNav}</div>

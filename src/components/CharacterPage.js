@@ -3,18 +3,24 @@ import { useParams } from 'react-router-dom';
 import CharacterSelect from './CharacterSelect';
 import PageTitle from './PageTitle';
 import { mainContext } from '../App';
-import { SET_DARKEN, SET_CHARACTER_API_DATA } from '../types';
+import {
+  SET_DARKEN,
+  SET_CHARACTER_API_DATA,
+  UPDATE_API_DATA_LOADING,
+} from '../types';
 import HomeNav from './HomeNav';
 import CharacterInfo from './CharacterInfo';
 export default function CharacterPage() {
   let { state, dispatch } = useContext(mainContext);
   let { name } = useParams();
   let id = getId(name);
+  console.log(state.apiDataLoading);
 
   useEffect(() => {
     dispatch({ type: SET_DARKEN, payload: true });
     async function getData() {
       if (!state.apiData[name]) {
+        dispatch({ type: UPDATE_API_DATA_LOADING, payload: true });
         try {
           let data = await fetch(
             `https://rickandmortyapi.com/api/character/${id}`
@@ -24,12 +30,14 @@ export default function CharacterPage() {
             type: SET_CHARACTER_API_DATA,
             payload: { data: res, name: name },
           });
+          dispatch({ type: UPDATE_API_DATA_LOADING, payload: false });
         } catch (e) {
           console.log(e);
         }
       }
     }
     getData();
+    // eslint-disable-next-line
   }, [dispatch, id, name]);
   return (
     <>
@@ -39,6 +47,7 @@ export default function CharacterPage() {
         characterName={name}
         character={state.apiData[name]}
         myCharacter={state.myData[name]}
+        loading={state.apiDataLoading}
       />
       <CharacterSelect state={state} param={name} />
     </>

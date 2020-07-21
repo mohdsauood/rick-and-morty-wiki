@@ -21,6 +21,8 @@ const initialState = {
   currentCharacter: false,
   darken: false,
   mcData: {},
+  mcLoading: true,
+  apiDataLoading: false,
 };
 
 export const mainContext = React.createContext('');
@@ -57,13 +59,17 @@ function App() {
 
 export default App;
 
-// i need to learn destructuring and update the info value of the bottom most found rick
-// so practise destructuring and then do that first
-
-//add pagination for reducing load on the page
-// only load when scrolled
-// implement that
-// watch pagination and infinite scroll react
+//tried promise everything no use
+//explain problem clearly in stack overflow
+// tell why u cant use it as array dependency
+//tell why u need to check other condition
+//tell why u r using await and async and try
+//before this try using plain promise instead of try
+//set api loading for main charcaters name and species
+//send dispatch as a promise reference stack overflow
+//FIX LOADING FOR BETH
+// ask help on stack overflow
+//see how to handle async dispatch
 // then fix mobile responsives by using netlify
 // fix errors deploy
 // see how it looks in mobile

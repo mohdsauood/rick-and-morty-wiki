@@ -115,3 +115,22 @@
 .multiverseCharacters::-webkit-scrollbar-thumb {
   background-color: var(--blue);
 }
+
+.mcLoading {
+  font-size: 5em;
+  color: var(--orange);
+  text-align: center;
+  animation: colorchange 2s linear infinite alternate;
+}
+
+@keyframes colorchange {
+  0% {
+    color: var(--yellow);
+  }
+  50% {
+    color: #b4b212;
+  }
+  100% {
+    color: var(--yellow);
+  }
+}
