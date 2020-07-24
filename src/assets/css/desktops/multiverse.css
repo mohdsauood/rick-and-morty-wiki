@@ -1,0 +1,9 @@
+@media screen and (min-width: 1200px) {
+  .multiverseCharacters {
+    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+  }
+  .mcLoading {
+    font-size: 2em;
+  }
+}

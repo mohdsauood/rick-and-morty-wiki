@@ -1,0 +1,8 @@
+@media screen and (min-width: 960px) {
+  .homeHeader-pickle img {
+    width: 28%;
+  }
+  .characterInfo {
+    margin: 0 10vw;
+  }
+}

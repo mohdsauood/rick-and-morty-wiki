@@ -1,0 +1,11 @@
+@media screen and (min-width: 960px) {
+  .multiverseCharacter {
+    margin-bottom: 8vh;
+  }
+  .multiverseNavIcon {
+    text-align: center;
+  }
+  .multiverseNavIcon img {
+    width: 30%;
+  }
+}

@@ -1,0 +1,32 @@
+@media screen and (min-width: 1200px) {
+  .main-layer {
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .homeHeader {
+    margin: 0 auto;
+    margin-top: 7vh;
+    display: flex;
+    flex-direction: row;
+    max-width: 1200px;
+  }
+  .homeHeader-pickle img {
+    width: 85%;
+    align-content: center;
+  }
+  .homeHeader {
+    max-width: 1200px;
+  }
+  .homeHeader-pickle {
+    padding-right: 0;
+  }
+  .characterSelect {
+    height: 30vh;
+    width: 90vw;
+    max-width: 900px;
+    margin: 0 10%;
+    left: 50%;
+    margin-left: -450px;
+  }
+}

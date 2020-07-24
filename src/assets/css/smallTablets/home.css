@@ -1,0 +1,13 @@
+@media screen and (min-width: 620px) {
+  :root {
+    font-size: 18px;
+  }
+
+  .main-background {
+    background-image: url(../../images/background.png);
+  }
+
+  .homeHeader-pickle img {
+    width: 30vw;
+  }
+}

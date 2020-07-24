@@ -1,0 +1,57 @@
+@media screen and (min-width: 1200px) {
+  .homeNav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 5vw;
+  }
+
+  .characterInfo-img {
+    text-align: center;
+  }
+
+  .characterInfo-name,
+  .characterInfo-species,
+  .characterInfo-wordings {
+    grid-column: 4/5;
+    justify-self: end;
+    width: 20vw;
+  }
+  .characterInfo-name-data,
+  .characterInfo-species-data,
+  .characterInfo-wordings-data {
+    grid-column: 5/6;
+    justify-self: center;
+    align-self: center;
+    width: 30vw;
+  }
+  .characterInfo-about {
+    grid-column: 4/7;
+    grid-row: 6/10;
+    line-height: 1.8em;
+    width: 40ch;
+  }
+  .characterInfo-name,
+  .characterInfo-name-data {
+    grid-row: 2;
+  }
+  .characterInfo-species,
+  .characterInfo-species-data {
+    grid-row: 3;
+  }
+  .characterInfo-wordings,
+  .characterInfo-wordings-data {
+    margin-top: 2vh;
+    grid-row: 4;
+  }
+  .characterInfo-wordings {
+    align-self: start;
+  }
+  .characterInfo-wordings-data {
+    height: 10vh;
+    text-align: left;
+    padding: 0;
+    align-self: start;
+    justify-self: start;
+    width: 20ch;
+  }
+}
