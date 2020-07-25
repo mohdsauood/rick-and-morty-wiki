@@ -23,6 +23,7 @@ export default function MultiverseInfo({ item, name }) {
     }
   }
   const observer = useRef();
+  //eslint-disable-next-line
   const lastCharacterRef = useCallback((node) => {
     if (observer.current) observer.current.disconnect();
     observer.current = new IntersectionObserver((entries) => {
