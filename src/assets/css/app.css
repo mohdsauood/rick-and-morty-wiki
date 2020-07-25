@@ -24,6 +24,7 @@
   height: 100vh;
   background-image: url('../images/mobilebackground.png');
   background-size: cover;
+  overflow-x: hidden;
 }
 .orange {
   color: var(--orange) !important;
