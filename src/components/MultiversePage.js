@@ -35,7 +35,6 @@ export default function MultiversePage() {
               payload: { data: res, name: name },
             });
           });
-          console.log(res);
         } catch (e) {
           console.log(e);
         }

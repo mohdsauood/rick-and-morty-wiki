@@ -14,7 +14,6 @@ export default function CharacterPage() {
   let { state, dispatch } = useContext(mainContext);
   let { name } = useParams();
   let id = getId(name);
-  console.log(state.apiDataLoading);
 
   useEffect(() => {
     dispatch({ type: SET_DARKEN, payload: true });
