@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { motion } from 'framer-motion';
 import { mainContext } from '../App';
 import { SET_CURRENT_CHARACTER } from '../types';
 import { useHistory } from 'react-router-dom';
@@ -11,7 +12,8 @@ export default function CharacterIcon({ characterName, param }) {
     backgroundImage: `url(${icon})`,
   };
   return (
-    <div
+    <motion.div
+      whileHover={{}}
       onClick={() => {
         dispatch({ type: SET_CURRENT_CHARACTER, payload: characterName });
         history.push(`/character/${characterName}`);
@@ -19,6 +21,6 @@ export default function CharacterIcon({ characterName, param }) {
       className={
         characterName === param ? 'characterIcons selected' : 'characterIcons'
       }
-      style={divStyle}></div>
+      style={divStyle}></motion.div>
   );
 }

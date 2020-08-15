@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { motion } from 'framer-motion';
 import CharacterIcon from './CharacterIcon';
 import { mainContext } from '../App';
 import { SET_CURRENT_CHARACTER } from '../types';
@@ -20,7 +21,11 @@ export default function CharacterSelect({ state, param }) {
     );
   }
   return (
-    <div className="characterSelect">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 2, delay: '0.4s', type: 'tween' }}
+      className="characterSelect">
       {elements}
       <div
         onClick={() => {
@@ -37,6 +42,6 @@ export default function CharacterSelect({ state, param }) {
           <path d="M7.33 24l-2.83-2.829 9.339-9.175-9.339-9.167 2.83-2.829 12.17 11.996z" />
         </svg>
       </div>
-    </div>
+    </motion.div>
   );
 }
