@@ -58,20 +58,3 @@ function App() {
 }
 
 export default App;
-
-//tried promise everything no use
-//explain problem clearly in stack overflow
-// tell why u cant use it as array dependency
-//tell why u need to check other condition
-//tell why u r using await and async and try
-//before this try using plain promise instead of try
-//set api loading for main charcaters name and species
-//send dispatch as a promise reference stack overflow
-//FIX LOADING FOR BETH
-// ask help on stack overflow
-//see how to handle async dispatch
-// then fix mobile responsives by using netlify
-// fix errors deploy
-// see how it looks in mobile
-// style for desktop and other screens
-// add hover effects and loading animation
