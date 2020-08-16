@@ -1,5 +1,7 @@
 import React, { useContext, useRef, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { mcSelectVariant, mcCharactersVariant } from '../framerVariants';
 import MultiverseCharacter from './MultiverseCharacter';
 import { mainContext } from '../App';
 import { UPDATE_MC_DATA, UPDATE_MC_LOADING } from '../types';
@@ -77,8 +79,22 @@ export default function MultiverseInfo({ item, name }) {
 
   return (
     <div className="multiverseInfo">
-      <div className="multiverseNav">{mcNav}</div>
-      <div className="multiverseCharacters">{elements}</div>
+      <motion.div
+        variants={mcSelectVariant}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+        className="multiverseNav">
+        {mcNav}
+      </motion.div>
+      <motion.div
+        variants={mcCharactersVariant}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+        className="multiverseCharacters">
+        {elements}
+      </motion.div>
     </div>
   );
 }

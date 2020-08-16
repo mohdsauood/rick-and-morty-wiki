@@ -1,5 +1,4 @@
 import React from 'react';
-
 export default function MultiverseCharacter({ item, ref1 = {}, loading }) {
   let loader = loading ? <p class="mcLoading">loading...</p> : '';
   return (

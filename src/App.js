@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
+import { Switch, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 import Home from './components/Home';
 import './assets/css/app.css';
 import {
@@ -29,17 +29,18 @@ export const mainContext = React.createContext('');
 
 function App() {
   const [state, dispatch] = useReducer(mainReducer, initialState);
+  const location = useLocation();
 
   const mainContextValue = {
     state,
     dispatch,
   };
   return (
-    <Router>
-      <mainContext.Provider value={mainContextValue}>
-        <div className="main-background">
-          <div className={state.darken ? 'main-layer darken' : 'main-layer'}>
-            <Switch>
+    <mainContext.Provider value={mainContextValue}>
+      <div className="main-background">
+        <div className={state.darken ? 'main-layer darken' : 'main-layer'}>
+          <AnimatePresence>
+            <Switch location={location} key={location.key}>
               <Route exact path={`/`}>
                 <Home />
               </Route>
@@ -50,10 +51,10 @@ function App() {
                 <MultiversePage />
               </Route>
             </Switch>
-          </div>
+          </AnimatePresence>
         </div>
-      </mainContext.Provider>
-    </Router>
+      </div>
+    </mainContext.Provider>
   );
 }
 
