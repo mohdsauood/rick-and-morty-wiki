@@ -1,39 +1,60 @@
+  
 <h1 align="center">
+ Rick and Morty wiki
+  <a href="https://rickandmortywiki.netlify.app/">
+  ↗️
+  </a>
   <br>
-  <img src="https://github.com/mohdsauood/rick-and-morty-wiki/blob/master/src/assets/images/logo.PNG" alt="rick&morty wiki" width="500">
 </h1>
 
+<h4 align="center"> A front-end React application that enables users to view the information about the characters from the animated science fiction tv series "rick and morty ". 
+<br >
+It uses data from the rick and morty public   <a href="https://rickandmortyapi.com/" target="_blank">API</a>.</h4>
+
+
 <p align="center">
-	<a href="https://mohdsauood.github.io/Dulcet-TodoApp/">Demo</a> •
-    <a href="#features">Features</a> •
-    <a href="#techused">TechUsed</a> •
+  <a href="#key-features">Key Features</a> •
+  <a href="#how-to-use">How To Use</a> •
+  <a href="#demo">Demo</a> •
 </p>
 
-Rick & Morty wiki is a SPA that has all the information about the characters in the animated science fiction tv series "rick and morty ".
-It fetches information from [rick and morty](https://rickandmortyapi.com/) API.
+[![rick and morty wiki-demo](https://raw.githubusercontent.com/mohdsauood/rick-and-morty-wiki/master/src/assets/images/read-me/rickmorty-demo.png)](https://rickandmortywiki.netlify.app/)
+
+## Key Features
+
+* Incorporated the intersection observer API to enable infinite pagination on scroll .
+* Added animations using react framer motion to create a interactive user experience
+* Interaction with public rick&morty database API to display relevant information such as Character name , icon and info.
+* Responsive design that adjusts smoothly to various screen sizes
 
 
-# Screenshots
- 
-# Usage
+## How To Use
+
+To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+
+```bash
+# Clone this repository
+$ git clone https://github.com/mohdsauood/rick-and-morty-wiki
+
+# Go into the repository
+$ cd rick-and-morty-wiki
+
+# Install dependencies
+$ npm install
+
+# Run the app
+$ npm start
+```
+
+Note: If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
 
 
+## Demo
 
----
-# Features
- 
- 
-## Code style
-[![code style](https://img.shields.io/static/v1?label=code%20style&message=js-beautify&color=ff69b4)](https://github.com/beautify-web/js-beautify)
+You can view the web application on [rickandmortywiki.netlify.app](https://rickandmortywiki.netlify.app/) 
 
+<br>
+<br>
+<br>
 
-## TechUsed
-frameWork : React Js
-
-## Credits
-
-<b>Made with love :blue_heart: </b>[mohamed sauood](https://github.com/mohdsauood)
-
-
-
-
+> GitHub [@mohdsauood](https://github.com/mohdsauood) &nbsp;&middot;&nbsp;
